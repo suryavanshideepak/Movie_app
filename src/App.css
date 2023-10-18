@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.logo{
+  font-family: 'Alumni Sans Collegiate One', sans-serif;
+  font-size: 60px;
+  color: rgb(180, 16, 16);
+}
+.nav li.active{
+  color: red;
+}
+a, a:focus {
+  text-decoration: none;
+}
+a.active {
+  color: #fff;
+  background: red;
+  padding: 10px;
+}
+.card{
+  box-shadow: 0px 0px 8px 2px;
+}
+.card:hover{
+  box-shadow: 0px 0px 25px 2px red;
+}
+.icon i{
+  font-size: 40px;
+  margin: 10px;
+}
+.inp{
+  border-radius: 5px;
+  padding: 5px 5px;
+  background-color: rgb(189, 27, 27);
+}
+.footer{
+  background-color: rgb(0, 0, 0);
+}
