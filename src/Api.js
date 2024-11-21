@@ -12,8 +12,8 @@ const Api = (props) => {
   const getData = async () => {
     const url = await fetch(
       `http://www.omdbapi.com/?s=${
-        props.firstValue === "" ? "abc" : props.firstValue
-      }&apikey=a871e09f`
+        props.firstValue === "" ? "" : props.firstValue
+      }&apikey=${process.env.REACT_APP_MOVIE_API_KEY}`
     );
     const data = await url.json();
     getMovies(data.Search);  
@@ -42,16 +42,10 @@ const Api = (props) => {
       return id.imdbID === newdata;
     });
     setShowData(newlist);
-    // console.log("jksdbcjs",newlist)
   };
-  console.log("efedf", showData);
 
   return (
     <>
-    {/* {
-      showData? console.log("if ",showData) : console.log("else",showData)
-    
-    } */}
       { 
        !showData ?  (
       
