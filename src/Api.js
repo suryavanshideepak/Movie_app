@@ -5,21 +5,19 @@ import { NavLink } from "react-router-dom";
 import "./App.css";
 
 const Api = (props) => {
-  const [movies, getMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showData, setShowData] = useState(false);
 
   const getData = async () => {
-    const url = await fetch(
-      `http://www.omdbapi.com/?s=${
-        props.firstValue === "" ? "" : props.firstValue
-      }&apikey=${process.env.REACT_APP_MOVIE_API_KEY}`
-    );
+    let urlOfApi = ''
+    const urlSearchParams = props.firstValue ? props.firstValue : 'batman'
+    urlOfApi = `http://www.omdbapi.com/?s=${urlSearchParams}&apikey=a871e09f`
+
+    const url = await fetch(urlOfApi);
     const data = await url.json();
-    getMovies(data.Search);  
-    setTimeout(() => {
-      setLoading(false);
-    }, 100);
+    setMovies(data?.Search);  
+    setLoading(false);
   };
   useEffect(() => {
     getData();
@@ -57,6 +55,7 @@ const Api = (props) => {
               <div className="row d-flex justify-content-center align-items-center">
                 {movies?.length ? (
                   movies.map((ele, ind) => {
+                    console.log(ele)
                     return (
                       <div
                         key={ind}
@@ -67,7 +66,7 @@ const Api = (props) => {
                             src={ele.Poster}
                             className="card-img-top "
                             height="300px"
-                            alt="..."
+                            alt="movies"
                           />
                           <div className="card-body">
                             <h5 className="text-danger"> {ele.Title}</h5>
@@ -85,7 +84,7 @@ const Api = (props) => {
                               color="error"
                               onClick={() => clickToShow(ele.imdbID)}
                             >
-                              Discription
+                              Description
                             </Button>
                           </div>
                         </div>
