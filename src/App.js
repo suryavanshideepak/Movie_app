@@ -7,6 +7,7 @@ import {BrowserRouter,Route,Routes, Navigate} from 'react-router-dom';
 import './App.css';
 import { useState } from 'react';
 import MoviesContext from './context/MoviesContext';
+import MovieDetails from './components/MovieDetails';
 
 function App(props) {
   const [firstValue,SetValue]=useState("")
@@ -27,6 +28,7 @@ function App(props) {
         <Route path='/' element={<Home firstValue={searchValue} />}/> 
         <Route path='/about' element={<About/>}/>
         <Route path='/blog' element={<Blog/>}/>
+        <Route path='/movies/:id' element={<MovieDetails/>}/>
         <Route path='/*' element={<Navigate to='/'/>}/>
       </Routes>
       </BrowserRouter>

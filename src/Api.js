@@ -1,13 +1,14 @@
 import React, { useState, useEffect} from "react";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./App.css";
 
 const Api = (props) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showData, setShowData] = useState(false);
+  const navigate = useNavigate()
 
   const getData = async () => {
     let urlOfApi = ''
@@ -55,7 +56,6 @@ const Api = (props) => {
               <div className="row d-flex justify-content-center align-items-center">
                 {movies?.length ? (
                   movies.map((ele, ind) => {
-                    console.log(ele)
                     return (
                       <div
                         key={ind}
@@ -82,7 +82,7 @@ const Api = (props) => {
                             <Button
                               variant="contained"
                               color="error"
-                              onClick={() => clickToShow(ele.imdbID)}
+                              onClick={() => navigate(`/movies/${ele.imdbID}`)}
                             >
                               Description
                             </Button>
