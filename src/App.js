@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import {BrowserRouter,Route,Routes, Navigate} from 'react-router-dom';
 import './App.css';
 import { useState } from 'react';
+import MoviesContext from './context/MoviesContext';
 
 function App(props) {
   const [firstValue,SetValue]=useState("")
@@ -19,6 +20,7 @@ function App(props) {
   }
   return (
     <div>
+      <MoviesContext>
       <BrowserRouter>
       <Navbar firstValue={firstValue} clickToSubmit={clickToSubmit} setFirstValue={((v)=>{SetValue(v)})}/>
       <Routes>
@@ -29,6 +31,7 @@ function App(props) {
       </Routes>
       </BrowserRouter>
       <Footer/>
+      </MoviesContext>
     </div>
   );
 }

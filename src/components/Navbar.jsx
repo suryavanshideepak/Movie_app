@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
-import React from "react";
+import React, { useContext } from "react";
+import { MyContext } from "../context/MoviesContext";
 
 const Navbar = (props) => {
+  const { value, setValue } = useContext(MyContext)
   const navLinkStyle = ({ isActive }) => {
     return {
       fontWeight: isActive ? "bold" : "normal",
@@ -9,6 +11,7 @@ const Navbar = (props) => {
       color: isActive ? "white" : "black",
     };
   };
+
 
   return (
     <>
@@ -57,6 +60,12 @@ const Navbar = (props) => {
               onClick={props.clickToSubmit}
             >
               Search
+            </button>
+            <button
+              className="btn btn-secondary mx-2 my-sm-0"
+              onClick={()=> setValue('batman')}
+            >
+              Clear
             </button>
           </form>
         </div>
