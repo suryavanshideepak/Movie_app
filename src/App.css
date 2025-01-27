@@ -130,9 +130,11 @@ a.active {
 }
 
 .footer .logo {
+  font-family: 'Alumni Sans Collegiate One', sans-serif;
+  font-size: 60px;
   color: #ff6347; /* Tomato color */
-  font-size: 2rem;
-  font-weight: bold;
+  /* font-size: 2rem; */
+  /* font-weight: bold; */
 }
 
 .footer .icon i {

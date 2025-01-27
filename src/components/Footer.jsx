@@ -9,7 +9,7 @@ function Footer(){
         <div className='row'>
          
           <div className='col-md-4 '>
-            <h2 className="logo">GetFlix</h2>
+            <h2 className="logo ">GetFlix</h2>
           </div>
           <div className='col-md-4 icon d-flex justify-content-center align-items-center'>
             <i className="fa-brands fa-facebook-f text-danger"></i>
