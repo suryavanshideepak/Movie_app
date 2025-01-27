@@ -3,19 +3,33 @@ import { NavLink, useParams } from 'react-router-dom'
 
 const MovieDetails = () => {
     const [movieData, setMovieData] = useState({})
+    const [loading, setLoading] = useState(false)
     let { id } = useParams()
     const getData = async () => {
+        setLoading(true)
         let  urlOfApi = `https://www.omdbapi.com/?i=${id}&apikey=a871e09f`
         const url = await fetch(urlOfApi);
         const data = await url.json();
-        console.log(data)
         setMovieData(data)
+        setLoading(false)
     }
+
     useEffect(() => {
         if(id){
            getData()
         }
     },id)
+    if (loading) {
+        return (
+          <>
+            <div className="d-flex justify-content-center">
+              <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+            </div>
+          </>
+        );
+      }
   return (
     <div>
         <div className="container d-flex justify-content-center align-items-center py-5">
