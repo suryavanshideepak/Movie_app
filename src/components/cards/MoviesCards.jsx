@@ -5,7 +5,7 @@ import './MoviesCards.css'
 const MoviesCards = () => {
   return (
     <div>
-      <div className="accordion">
+      <div className="accordion col-md-12">
         <ul>
           <li>
             <div className="image_title">

@@ -12,7 +12,7 @@ const Navbar = (props) => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow p-3 mb-5 ">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow mb-5 ">
         <h2 className="logo">GetFlix</h2>
         <button
           className="navbar-toggler bg-danger"
@@ -32,7 +32,7 @@ const Navbar = (props) => {
                 HOME
               </NavLink>
             </li>
-            <li className="nav-item pl-5 py-2">
+            {/* <li className="nav-item pl-5 py-2">
               <NavLink style={navLinkStyle} to={"/about"}>
                 ABOUT
               </NavLink>
@@ -41,7 +41,7 @@ const Navbar = (props) => {
               <NavLink style={navLinkStyle} to={"/blog"}>
                 BLOG
               </NavLink>
-            </li>
+            </li> */}
           </ul>
           <form className="form-inline my-2 my-lg-0 mr-5">
             <input

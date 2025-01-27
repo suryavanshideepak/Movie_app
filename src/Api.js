@@ -12,7 +12,7 @@ const Api = (props) => {
   const getData = async () => {
     let urlOfApi = ''
     const urlSearchParams = props.firstValue ? props.firstValue : 'batman'
-    urlOfApi = `http://www.omdbapi.com/?s=${urlSearchParams}&apikey=a871e09f`
+    urlOfApi = `https://www.omdbapi.com/?s=${urlSearchParams}&apikey=a871e09f`
 
     const url = await fetch(urlOfApi);
     const data = await url.json();
@@ -93,7 +93,7 @@ const Api = (props) => {
                   })
                 ) : (
                   <Alert severity="error">
-                    No Movie Found ----Check again!
+                    No Movie Found ---- Check again!
                   </Alert>
                 )}
               </div>
